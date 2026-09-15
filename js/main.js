@@ -18,7 +18,6 @@ const TAG_STYLE = {
 };
 
 const CITY_THEME = {
-  chenzhou: { badge: 'bg-emerald-600', dot: 'border-emerald-500', text: 'text-emerald-700' },
   zhangjiajie: { badge: 'bg-teal-600', dot: 'border-teal-500', text: 'text-teal-700' },
   changsha: { badge: 'bg-orange-500', dot: 'border-orange-400', text: 'text-orange-600' }
 };
