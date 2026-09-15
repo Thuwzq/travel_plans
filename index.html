@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>湘约十一 · 湖南七日双人之旅（深圳-郴州-张家界-长沙）</title>
+  <meta name="description" content="2026 国庆黄金周双人湖南之旅：深圳出发，郴州看雾、张家界看山、长沙吃辣，最后在长沙分别飞往大连与深圳。" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      safelist: ['bg-jade-600', 'bg-maple-500', 'text-jade-700', 'text-maple-600', 'ring-jade-500'],
+      theme: {
+        extend: {
+          colors: {
+            jade: { 50: '#f0fdfa', 100: '#ccfbf1', 300: '#5eead4', 400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e', 800: '#115e59', 900: '#134e4a' },
+            maple: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c' }
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-stone-50 text-slate-800 antialiased">
+
+  <!-- ================= 导航 ================= -->
+  <nav id="navbar" class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-md border-b border-white/60 transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="flex items-center gap-2.5">
+          <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-jade-500 to-jade-700 text-white flex items-center justify-center text-lg shadow-lg shadow-jade-600/30"><i class="ri-compass-3-line"></i></span>
+          <span class="font-black text-lg text-slate-900 tracking-wide">湘约十一</span>
+        </a>
+        <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+          <a href="#route" class="nav-link" data-nav>总览</a>
+          <a href="#itinerary" class="nav-link" data-nav>行程</a>
+          <a href="#transport" class="nav-link" data-nav>交通</a>
+          <a href="#food" class="nav-link" data-nav>美食</a>
+          <a href="#budget" class="nav-link" data-nav>预算</a>
+          <a href="#tips" class="nav-link" data-nav>锦囊</a>
+        </div>
+        <a href="#itinerary" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-jade-600 text-white text-sm font-semibold hover:bg-jade-700 transition-colors shadow-lg shadow-jade-600/25">
+          <i class="ri-map-2-line"></i>开始旅程
+        </a>
+        <button id="menuBtn" type="button" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100" aria-label="打开菜单">
+          <i class="ri-menu-line text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-slate-100">
+      <div class="px-4 py-3 space-y-1 text-sm font-medium text-slate-600">
+        <a href="#route" class="block px-3 py-2.5 rounded-lg hover:bg-jade-50 hover:text-jade-700"><i class="ri-route-line mr-2"></i>行程总览</a>
+        <a href="#itinerary" class="block px-3 py-2.5 rounded-lg hover:bg-jade-50 hover:text-jade-700"><i class="ri-calendar-todo-line mr-2"></i>七日行程</a>
+        <a href="#transport" class="block px-3 py-2.5 rounded-lg hover:bg-jade-50 hover:text-jade-700"><i class="ri-train-line mr-2"></i>交通指南</a>
+        <a href="#food" class="block px-3 py-2.5 rounded-lg hover:bg-jade-50 hover:text-jade-700"><i class="ri-restaurant-line mr-2"></i>美食清单</a>
+        <a href="#budget" class="block px-3 py-2.5 rounded-lg hover:bg-jade-50 hover:text-jade-700"><i class="ri-wallet-3-line mr-2"></i>预算规划</a>
+        <a href="#tips" class="block px-3 py-2.5 rounded-lg hover:bg-jade-50 hover:text-jade-700"><i class="ri-lightbulb-line mr-2"></i>贴心锦囊</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= Hero ================= -->
+  <header id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 hero-bg" style="background-image:url('https://assets.with.tencent.com/default/632c6b88-a193-46e9-a889-2389a08bf0dc/image_1789455402_1_3.jpg')"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/40 to-slate-950/85"></div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20 pb-40">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/25 text-emerald-100 text-sm font-medium">
+        <i class="ri-flag-line"></i>2026 国庆黄金周 · 双人湘行
+      </span>
+      <h1 class="mt-7 text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-[0.18em] drop-shadow-lg">湘约十一</h1>
+      <p class="mt-5 text-lg sm:text-xl font-semibold text-emerald-50 tracking-wide">深圳 → 郴州 → 张家界 → 长沙</p>
+      <p class="mt-5 text-sm sm:text-base text-slate-200/80 max-w-2xl mx-auto leading-relaxed">
+        从湾区晨光出发，看郴州的雾、张家界的山、长沙的夜；<br class="hidden sm:block" />
+        旅途的尾声在星城道别——一个奔向大海之北，一个回归湾区之南。
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="#itinerary" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-jade-500 text-white font-bold hover:bg-jade-400 transition-all shadow-xl shadow-jade-600/30 hover:-translate-y-0.5">
+          <i class="ri-calendar-check-line"></i>查看七日行程
+        </a>
+        <a href="#budget" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/10 backdrop-blur border border-white/30 text-white font-bold hover:bg-white/20 transition-all hover:-translate-y-0.5">
+          <i class="ri-wallet-3-line"></i>预算规划
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 inset-x-0 z-10 pb-10 px-4">
+      <div id="heroStats" class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-4xl mx-auto"></div>
+      <div class="mt-8 text-center text-white/60">
+        <i class="ri-arrow-down-line text-2xl float-down"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= 路线总览 ================= -->
+  <section id="route" class="py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.25em] text-jade-700 bg-jade-50 border border-jade-100 px-3.5 py-1.5 rounded-full">ROUTE OVERVIEW</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-black text-slate-900">一路向北 · 行程总览</h2>
+        <p class="mt-4 text-slate-500 leading-relaxed">从深圳出发，郴州看水、张家界看山、长沙吃辣，最后在星城道别。每一段车程都不超过五小时，节奏刚刚好。</p>
+      </div>
+      <div class="relative mt-14">
+        <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-sky-200 via-jade-200 to-indigo-200 -translate-y-6"></div>
+        <div id="routeGrid" class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 七日行程 ================= -->
+  <section id="itinerary" class="py-20 lg:py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.25em] text-jade-700 bg-jade-50 border border-jade-100 px-3.5 py-1.5 rounded-full">DAILY ITINERARY</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-black text-slate-900">七日行程 · 逐日拆解</h2>
+        <p class="mt-4 text-slate-500 leading-relaxed">每天的时间线、交通、住宿与小贴士都已就位，点击城市标签快速筛选。</p>
+      </div>
+      <div id="cityTabs" class="reveal mt-10 flex flex-wrap justify-center gap-3"></div>
+      <div id="timeline" class="relative timeline-line mt-12 space-y-12"></div>
+    </div>
+  </section>
+
+  <!-- ================= 交通指南 ================= -->
+  <section id="transport" class="py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.25em] text-jade-700 bg-jade-50 border border-jade-100 px-3.5 py-1.5 rounded-full">TRANSPORT</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-black text-slate-900">城际交通 · 无缝衔接</h2>
+        <p class="mt-4 text-slate-500 leading-relaxed">三段高铁串联四城，两趟航班完成分别。十一票源紧张，所有班次建议开售即抢。</p>
+      </div>
+      <div id="transportGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </div>
+  </section>
+
+  <!-- ================= 美食清单 ================= -->
+  <section id="food" class="py-20 lg:py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.25em] text-maple-600 bg-maple-50 border border-maple-200 px-3.5 py-1.5 rounded-full">FOOD MAP</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-black text-slate-900">舌尖湘味 · 吃遍三城</h2>
+        <p class="mt-4 text-slate-500 leading-relaxed">从郴州鱼粉到长沙口味虾，这趟旅程一半的期待在餐桌上。微辣起步，量力而行。</p>
+      </div>
+      <div id="foodWrap" class="mt-14 space-y-14"></div>
+    </div>
+  </section>
+
+  <!-- ================= 预算规划 ================= -->
+  <section id="budget" class="py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.25em] text-jade-700 bg-jade-50 border border-jade-100 px-3.5 py-1.5 rounded-full">BUDGET</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-black text-slate-900">预算规划 · 心里有数</h2>
+        <p class="mt-4 text-slate-500 leading-relaxed">两人合计约 ¥10,900，交通与住宿占大头。十一为旺季峰值价，早订才是硬道理。</p>
+      </div>
+      <div class="mt-14 grid lg:grid-cols-5 gap-10 items-start">
+        <div class="reveal lg:col-span-2 rounded-3xl border border-stone-200 bg-stone-50/60 p-4">
+          <div id="budgetChart" style="height: 400px;"></div>
+        </div>
+        <div id="budgetList" class="lg:col-span-3 space-y-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 贴士锦囊 ================= -->
+  <section id="tips" class="py-20 lg:py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.25em] text-jade-700 bg-jade-50 border border-jade-100 px-3.5 py-1.5 rounded-full">TIPS</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-black text-slate-900">贴心锦囊 · 出行必读</h2>
+        <p class="mt-4 text-slate-500 leading-relaxed">十一出行，拼的就是细节。这六条攻略请务必在出发前看完。</p>
+      </div>
+      <div id="tipsGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </div>
+  </section>
+
+  <!-- ================= 星城道别 ================= -->
+  <section id="farewell" class="relative starfield py-20 lg:py-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <span class="inline-flex items-center gap-2 text-xs font-bold tracking-[0.25em] text-emerald-200/80 bg-white/10 border border-white/15 px-3.5 py-1.5 rounded-full backdrop-blur">FAREWELL</span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-black text-white">山水一程 · 后会有期</h2>
+        <p class="mt-4 text-slate-300/80 leading-relaxed">
+          七天六晚，从丹霞到峰林，从晨雾到星城。旅途的尾声，我们在黄花机场拥抱道别——<br class="hidden sm:block" />
+          一个人北上大连，一个人南下深圳。看过的山水都会记得，我们曾并肩同行。
+        </p>
+      </div>
+      <div id="flightCards" class="mt-14 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"></div>
+      <div class="reveal mt-12 text-center">
+        <div class="inline-flex items-center gap-2 text-emerald-200/70 text-sm">
+          <i class="ri-heart-3-fill text-rose-400"></i>
+          分别是为了更好的重逢，下一站，再约
+          <i class="ri-heart-3-fill text-rose-400"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 页脚 ================= -->
+  <footer class="bg-slate-950 text-slate-400 py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="flex items-center justify-center gap-2.5">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-jade-500 to-jade-700 text-white flex items-center justify-center"><i class="ri-compass-3-line"></i></span>
+        <span class="font-black text-slate-200 tracking-wide">湘约十一</span>
+      </div>
+      <p class="mt-4 text-sm">深圳出发的湖南七日双人之旅 · 2026.10.01 - 10.07 · 郴州 / 张家界 / 长沙</p>
+      <p class="mt-2 text-xs text-slate-500">行程时刻与价格为参考估算，请以实际预订为准 · 祝二位旅途愉快</p>
+      <p class="mt-5">由 <a href="https://with.woa.com/" style="color: #8A2BE2;" target="_blank">With</a> 通过自然语言生成</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+/* ============ 基础 ============ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+}
+
+/* ============ 滚动条 ============ */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f5f5f4; }
+::-webkit-scrollbar-thumb { background: #a8a29e; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #78716c; }
+
+::selection { background: #14b8a6; color: #fff; }
+
+/* ============ 滚动显现动画 ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ============ Hero ============ */
+.hero-bg {
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  animation: heroZoom 18s ease-out forwards;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.12); }
+  to { transform: scale(1.02); }
+}
+
+@keyframes floatDown {
+  0%, 100% { transform: translateY(0); opacity: .9; }
+  50% { transform: translateY(10px); opacity: .5; }
+}
+.float-down { animation: floatDown 2.2s ease-in-out infinite; }
+
+/* ============ 时间轴 ============ */
+.timeline-line::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 3rem;
+  bottom: 3rem;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(to bottom,
+    rgba(20, 184, 166, 0) 0%,
+    #2dd4bf 8%,
+    #0d9488 50%,
+    #2dd4bf 92%,
+    rgba(20, 184, 166, 0) 100%);
+}
+
+/* 日程节点圆点 */
+.schedule-item { position: relative; }
+.schedule-item::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 3px solid #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, .12);
+}
+
+/* ============ 图片悬停缩放 ============ */
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.img-zoom:hover img { transform: scale(1.07); }
+
+/* ============ 导航下划线 ============ */
+.nav-link { position: relative; transition: color .25s ease; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0;
+  border-radius: 2px;
+  background: #0d9488;
+  transition: width .3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+.nav-link.active { color: #0f766e; }
+
+/* ============ 通用卡片悬停 ============ */
+.hover-lift { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px -18px rgba(15, 23, 42, .22);
+}
+
+/* ============ 星夜背景（分别板块） ============ */
+.starfield {
+  background:
+    radial-gradient(1.5px 1.5px at 18% 28%, rgba(255,255,255,.75) 50%, transparent 51%),
+    radial-gradient(1px 1px at 42% 12%, rgba(255,255,255,.55) 50%, transparent 51%),
+    radial-gradient(2px 2px at 66% 32%, rgba(255,255,255,.6) 50%, transparent 51%),
+    radial-gradient(1px 1px at 82% 18%, rgba(255,255,255,.5) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 30% 68%, rgba(255,255,255,.4) 50%, transparent 51%),
+    radial-gradient(1px 1px at 56% 82%, rgba(255,255,255,.45) 50%, transparent 51%),
+    radial-gradient(2px 2px at 88% 58%, rgba(255,255,255,.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 10% 52%, rgba(255,255,255,.4) 50%, transparent 51%),
+    linear-gradient(160deg, #0f172a 0%, #134e4a 55%, #1e293b 100%);
+}
+
+/* ============ 航班虚线动画 ============ */
+.flight-dash {
+  background-image: linear-gradient(to right, rgba(255,255,255,.55) 45%, transparent 45%);
+  background-size: 10px 2px;
+  background-repeat: repeat-x;
+  animation: dashMove 1.2s linear infinite;
+}
+@keyframes dashMove {
+  from { background-position: 0 0; }
+  to { background-position: 20px 0; }
+}
+
+/* ============ Tab 选中态 ============ */
+.tab-btn { transition: all .25s ease; }
+.tab-btn.active {
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
+  color: #fff;
+  box-shadow: 0 8px 20px -8px rgba(13, 148, 136, .6);
+  transform: translateY(-1px);
+}
+
+/* ============ 预算条动画 ============ */
+.budget-bar {
+  width: 0;
+  transition: width 1.2s cubic-bezier(.2,.7,.3,1);
+}
+.budget-bar.animated { width: var(--bar-w); }
