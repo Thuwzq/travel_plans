@@ -3,7 +3,7 @@
  * ============================================================ */
 import {
   IMG, tripMeta, routeStops, cityTabs, itinerary,
-  transportList, foods, budget, tips, flights
+  transportList, hotelStays, foods, budget, tips, flights
 } from './data.js';
 
 /* ---------------- 通用工具 ---------------- */
@@ -201,6 +201,61 @@ function renderTransport() {
         </div>
       </div>
       <p class="mt-4 text-xs text-slate-500 leading-relaxed"><i class="ri-information-line mr-1 text-slate-400"></i>${t.note}</p>
+    </div>
+  `).join('');
+}
+
+/* ---------------- 精选住宿 ---------------- */
+function renderHotels() {
+  const wrap = $('#hotelWrap');
+  if (!wrap) return;
+  wrap.innerHTML = hotelStays.map((stay) => `
+    <div class="reveal">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="w-10 h-10 rounded-xl ${stay.color} text-white flex items-center justify-center text-lg"><i class="${stay.icon}"></i></span>
+        <h3 class="text-xl font-bold text-slate-900">${stay.city} · ${stay.area}</h3>
+        <span class="px-2.5 py-1 rounded-full ${stay.chip} text-xs font-semibold">${stay.dateRange} · 连住 ${stay.nights} 晚</span>
+      </div>
+      <p class="mt-3 text-sm text-slate-500 leading-relaxed max-w-3xl">${stay.reason}</p>
+      <div class="mt-6 grid md:grid-cols-3 gap-4 items-stretch">
+        <div class="rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50 to-white p-6 flex flex-col">
+          <div class="flex items-center gap-2 text-violet-700">
+            <i class="ri-price-tag-3-line text-lg"></i>
+            <span class="font-bold text-sm">本站房价参考</span>
+          </div>
+          <div class="mt-3 flex items-baseline gap-1">
+            <span class="text-3xl font-black text-slate-900 tabular-nums">${stay.avgPrice}</span>
+            <span class="text-sm text-slate-500">/晚</span>
+          </div>
+          <p class="mt-1.5 text-xs text-slate-500 leading-relaxed">${stay.avgNote}</p>
+          <div class="mt-4 pt-4 border-t border-violet-100">
+            <div class="flex items-center gap-1.5 text-xs font-bold text-violet-700"><i class="ri-lightbulb-flash-line"></i>订房锦囊</div>
+            <p class="mt-2 text-xs text-slate-500 leading-relaxed">${stay.advice}</p>
+          </div>
+        </div>
+        ${stay.hotels.map((h) => `
+        <div class="rounded-2xl border border-stone-200 bg-white p-6 hover-lift hover:border-jade-300 transition-colors flex flex-col">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0">
+              <span class="px-2 py-0.5 rounded-full ${h.tierTheme} text-white text-[11px] font-bold">${h.tier}</span>
+              <h4 class="mt-2.5 font-bold text-slate-900 leading-snug">${h.name}</h4>
+              <div class="mt-1 text-xs text-slate-400">${h.type}</div>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="text-lg font-black text-jade-700 tabular-nums">${h.price}</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">/晚 · 十一参考</div>
+            </div>
+          </div>
+          <div class="mt-3 flex items-start gap-1.5 text-xs text-slate-500">
+            <i class="ri-map-pin-2-line mt-0.5 text-slate-400 shrink-0"></i>
+            <span>${h.addr}</span>
+          </div>
+          <p class="mt-3 text-sm text-slate-600 leading-relaxed flex-1">${h.desc}</p>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            ${h.tags.map((t) => `<span class="px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 text-[11px] font-medium">${t}</span>`).join('')}
+          </div>
+        </div>`).join('')}
+      </div>
     </div>
   `).join('');
 }
@@ -434,6 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTimeline('all');
   bindTabEvents();
   renderTransport();
+  renderHotels();
   renderFoods();
   renderBudgetList();
   initBudgetChart();
