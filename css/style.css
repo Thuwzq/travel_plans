@@ -68,7 +68,7 @@ body {
 .schedule-item::before {
   content: '';
   position: absolute;
-  left: -27px;
+  left: -30px;
   top: 7px;
   width: 10px;
   height: 10px;

@@ -28,8 +28,8 @@ const stars = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
 function renderHeroStats() {
   const wrap = $('#heroStats');
   if (!wrap) return;
-  wrap.innerHTML = tripMeta.stats.map((s) => `
-    <div class="rounded-2xl bg-white/10 backdrop-blur border border-white/15 px-4 py-3 text-center hover:bg-white/15 transition-colors">
+  wrap.innerHTML = tripMeta.stats.map((s, i) => `
+    <div class="${i === tripMeta.stats.length - 1 ? 'col-span-2 sm:col-span-1 ' : ''}rounded-2xl bg-white/10 backdrop-blur border border-white/15 px-4 py-3 text-center hover:bg-white/15 transition-colors">
       <div class="text-2xl sm:text-3xl font-black text-white leading-none">${s.value}<span class="text-sm font-semibold text-emerald-200 ml-0.5">${s.unit}</span></div>
       <div class="text-xs text-emerald-50/70 mt-1.5">${s.label}</div>
     </div>
@@ -170,7 +170,7 @@ function bindTabEvents() {
     renderTabs(key);
     renderTimeline(key);
     const target = $('#itinerary');
-    if (target) window.scrollTo({ top: target.offsetTop + 120, behavior: 'smooth' });
+    if (target) window.scrollTo({ top: Math.max(0, target.offsetTop - 84), behavior: 'smooth' });
   });
 }
 
@@ -273,7 +273,7 @@ function renderFoods() {
       </div>
       <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         ${city.items.map((f) => f.img ? `
-        <div class="group relative rounded-2xl overflow-hidden border border-stone-200 img-zoom hover-lift sm:col-span-2 lg:row-span-2 lg:col-span-1 lg:h-full min-h-52">
+        <div class="group relative rounded-2xl overflow-hidden border border-stone-200 img-zoom hover-lift sm:col-span-2 lg:col-span-1 h-56 lg:h-60">
           <img src="${f.img}" alt="${f.name}" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
           <div class="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/25 to-transparent"></div>
           ${f.must ? '<span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-maple-500 text-white text-[11px] font-bold shadow">必吃 TOP</span>' : ''}
@@ -284,14 +284,14 @@ function renderFoods() {
             <div class="mt-2 text-xs text-amber-300 tracking-widest">${stars(f.star)}</div>
           </div>
         </div>` : `
-        <div class="rounded-2xl border border-stone-200 bg-white p-5 hover-lift hover:border-jade-300 transition-colors">
+        <div class="rounded-2xl border border-stone-200 bg-white p-5 hover-lift hover:border-jade-300 transition-colors flex flex-col">
           <div class="flex items-start justify-between">
             <span class="text-3xl">${f.emoji}</span>
             ${f.must ? '<span class="px-2 py-0.5 rounded-full bg-maple-50 text-maple-600 border border-maple-200 text-[11px] font-bold">必吃</span>' : ''}
           </div>
           <h4 class="mt-3 font-bold text-slate-900">${f.name}</h4>
           <p class="mt-1.5 text-xs text-slate-500 leading-relaxed">${f.desc}</p>
-          <div class="mt-3 text-xs text-amber-400 tracking-widest">${stars(f.star)}</div>
+          <div class="mt-auto pt-3 text-xs text-amber-400 tracking-widest">${stars(f.star)}</div>
         </div>`).join('')}
       </div>
     </div>
