@@ -1,6 +1,6 @@
 /* ============================================================
  * 湘约十一 · 湖南七日双人之旅 —— 数据层
- * 2026.10.01(周四) 出发 ～ 10.07(周三) 分别
+ * 2026.09.30(周三) 晚出发 ～ 10.07(周三) 分别
  * 路线：深圳 → 长沙 → 张家界 → 长沙（舒适节奏版）
  * ============================================================ */
 
@@ -23,25 +23,25 @@ export const tripMeta = {
   badge: '2026 国庆黄金周 · 双人湘行',
   title: '湘约十一',
   subtitle: '深圳 → 长沙 → 张家界 → 长沙',
-  slogan: '从湾区晨光出发，先醉在星城的烟火夜里，再赴三千奇峰的阿凡达秘境，最后回到长沙道别——一个奔向大海之北，一个回归湾区之南。',
+  slogan: '9.30 的夜色里分头出发：她一小时飞抵星城，我三小时半缓缓北上；先醉在星城的烟火里，再赴三千奇峰的阿凡达秘境，最后回到长沙道别——一个奔向大海之北，一个回归湾区之南。',
   stats: [
-    { value: '7', unit: '天', label: '黄金周长假' },
+    { value: '8', unit: '天', label: '拉满黄金周' },
     { value: '2', unit: '人', label: '同行旅人' },
     { value: '2', unit: '城', label: '湘楚双城' },
     { value: '3', unit: '段', label: '高铁城际' },
-    { value: '2', unit: '趟', label: '返程航班' }
+    { value: '3', unit: '趟', label: '航班往来' }
   ]
 };
 
 /* ---------------- 路线总览 ---------------- */
 export const routeStops = [
   {
-    tag: '启程', city: '深圳', date: '10.01 上午', icon: '🚄',
-    desc: '深圳北站出发', highlights: ['高铁直达长沙'],
+    tag: '启程', city: '深圳', date: '9.30 傍晚', icon: '🛫',
+    desc: '双线出发 · 我高铁她飞机', highlights: ['我 · 深圳北高铁', '她 · 宝安直飞星城'],
     bg: 'bg-sky-100', text: 'text-sky-600', chip: 'bg-sky-50 text-sky-700'
   },
   {
-    tag: '第一站', city: '长沙', date: '10.01 - 10.04', icon: '🎡',
+    tag: '第一站', city: '长沙', date: '9.30 - 10.04', icon: '🎡',
     desc: '网红星城 · 慢节奏逛吃', highlights: ['橘子洲', '岳麓山', '太平街'],
     bg: 'bg-orange-100', text: 'text-orange-600', chip: 'bg-orange-50 text-orange-700'
   },
@@ -64,34 +64,53 @@ export const routeStops = [
 
 /* ---------------- 城市筛选 Tab ---------------- */
 export const cityTabs = [
-  { key: 'all', label: '全部行程', icon: 'ri-stack-line', count: 7 },
-  { key: 'changsha', label: '长沙', icon: 'ri-city-line', count: 5 },
+  { key: 'all', label: '全部行程', icon: 'ri-stack-line', count: 8 },
+  { key: 'changsha', label: '长沙', icon: 'ri-city-line', count: 6 },
   { key: 'zhangjiajie', label: '张家界', icon: 'ri-landscape-line', count: 2 }
 ];
 
 /* ---------------- 七日行程（舒适节奏） ---------------- */
 export const itinerary = [
   {
-    day: 1, date: '10.01', weekday: '周四', cityKey: 'changsha', city: '长沙',
-    place: '长沙 · 五一广场', theme: '初见星城',
-    subtitle: '从湾区晨光到湘江夜色，第一天只安排逛和吃',
-    image: IMG.changshaIFS, imageAlt: '长沙五一广场IFS国金中心商圈夜景',
+    day: 1, date: '09.30', weekday: '周三', cityKey: 'changsha', city: '长沙',
+    place: '深圳 → 长沙', theme: '星夜启程',
+    subtitle: '同一片夜色里分头出发：她一小时飞抵星城，我三小时半缓缓北上',
+    image: IMG.changshaNight, imageAlt: '长沙五一商圈璀璨夜景',
     schedule: [
-      { time: '08:30', tag: 'transport', title: '深圳北站出发', desc: 'G 字头高铁直达长沙南，全程约 3 小时 30 分，二等座约 ¥388.5/人。提前选好靠窗位，一路看岭南秋色。' },
-      { time: '12:00', tag: 'transport', title: '抵达长沙南', desc: '地铁 2 号线直达五一广场约 30 分钟，出站步行即达酒店，全程不折腾。' },
-      { time: '13:00', tag: 'food', title: '午餐 · 湘菜正餐', desc: '费大厨辣椒炒肉或炊烟时代小炒黄牛肉，长沙的辣从这一顿正式开始。' },
-      { time: '14:30', tag: 'hotel', title: '入住 + 午休', desc: '入住五一广场的万代大酒店，安顿行李后小睡一会避开正午暑气——舒适第一，今天不赶路。' },
-      { time: '16:30', tag: 'sight', title: '黄兴路 · IFS 国金中心', desc: '楼顶打卡 KAWS 雕塑，商场里逛逛吹空调，避开晚高峰人流。' },
-      { time: '18:00', tag: 'food', title: '太平街小吃', desc: '黑色经典臭豆腐、糖油粑粑、大香肠，一条千年老街从头吃到尾。' },
-      { time: '20:00', tag: 'sight', title: '湘江夜景散步', desc: '人手一杯茶颜悦色，沿湘江中路走到杜甫江阁，看对岸灯火渐次亮起。' },
-      { time: '21:30', tag: 'hotel', title: '回酒店休息', desc: '早点休息，明天可以睡到自然醒。' }
+      { time: '16:30', tag: 'transport', title: '她 · 出发宝安机场', desc: '地铁 11 号线直达宝安机场，提前 1.5 小时值机托运，行李托运后一身轻。' },
+      { time: '18:00', tag: 'transport', title: '她 · 起飞直飞长沙', desc: '深航/南航傍晚班次约 1 小时 25 分抵达黄花机场，约 ¥450-700/人；同一时刻我从深圳北发车，先到的负责办入住。' },
+      { time: '18:05', tag: 'transport', title: '我 · 深圳北高铁发车', desc: 'G 字头高铁约 3 小时 30 分直达长沙南，二等座约 ¥388.5；节前夜出发，票比 10.1 上午好抢得多。' },
+      { time: '19:25', tag: 'transport', title: '她 · 抵达黄花机场', desc: '磁浮快线 20 分钟 + 地铁 2 号线 5 站，约 50 分钟抵达五一广场；不想折腾打车约 40 分钟 ¥60。' },
+      { time: '20:15', tag: 'hotel', title: '她 · 先抵酒店办入住', desc: '万代大酒店前台凭身份证拿房卡，把两人行李安顿好，等我上楼。' },
+      { time: '21:30', tag: 'transport', title: '我 · 抵达长沙南', desc: '地铁 2 号线直达五一广场约 30 分钟，出站步行即达酒店，全程不折腾。' },
+      { time: '22:00', tag: 'food', title: '会合 · 深夜嗦粉', desc: '酒店楼下粉店还亮着灯：一碗热汤粉下肚，四个小时的路途都焐热了，旅程正式开场。' },
+      { time: '23:00', tag: 'hotel', title: '早点休息', desc: '明天是国庆第一天，睡到自然醒再出发。' }
     ],
-    transport: '深圳北 → 长沙南 · 高铁约 3h30m · ¥388.5/人',
-    hotel: '长沙 · 万代大酒店（五一广场 · 第 1/3 晚）',
-    tip: '十一高铁票 9 月中旬开售即抢，可勾选候补；五一广场地铁站出口步行可达各大商圈，全程无需打车。'
+    transport: '我 · 深圳北 → 长沙南高铁约 3h30m ¥388.5 · 她 · 宝安 → 黄花直飞约 1h25m ¥450-700',
+    hotel: '长沙 · 万代大酒店（五一广场 · 第 1/4 晚）',
+    tip: '节前夜错峰出行：9.30 的高铁与机票都比 10.1 当天从容且便宜；出发前在 App 上办好线上入住登记，深夜到店直接拿房卡不排队。'
   },
   {
-    day: 2, date: '10.02', weekday: '周五', cityKey: 'changsha', city: '长沙',
+    day: 2, date: '10.01', weekday: '周四', cityKey: 'changsha', city: '长沙',
+    place: '长沙 · 五一广场', theme: '初见星城',
+    subtitle: '国庆第一天不设闹钟，从一碗粉开始把星城慢慢逛开',
+    image: IMG.changshaIFS, imageAlt: '长沙五一广场IFS国金中心商圈夜景',
+    schedule: [
+      { time: '09:00', tag: 'food', title: '自然醒 · 嗦粉早餐', desc: '不设闹钟，下楼嗦一碗长沙米粉加码子加煎蛋，老长沙人的早晨从一碗粉开始。' },
+      { time: '10:30', tag: 'sight', title: '黄兴路 · IFS 国金中心', desc: '楼顶打卡 KAWS 雕塑，商场里逛逛吹空调；上午人少光线好，拍照不用排队。' },
+      { time: '12:30', tag: 'food', title: '午餐 · 湘菜正餐', desc: '费大厨辣椒炒肉或炊烟时代小炒黄牛肉，长沙的辣从这一顿正式开始。' },
+      { time: '14:00', tag: 'hotel', title: '回酒店午休', desc: '把正午的暑气交给空调房，午睡两小时——舒适第一，今天不赶路。' },
+      { time: '16:30', tag: 'sight', title: '茶颜悦色 · 概念店探店', desc: '幽兰拿铁 + 声声乌龙，顺手带几包茶包手信；国庆排队约一刻钟，值得。' },
+      { time: '18:00', tag: 'food', title: '太平街小吃', desc: '黑色经典臭豆腐、糖油粑粑、大香肠，一条千年老街从头吃到尾。' },
+      { time: '20:00', tag: 'sight', title: '湘江夜景散步', desc: '沿湘江中路走到杜甫江阁，看对岸灯火渐次亮起，江风正好。' },
+      { time: '21:30', tag: 'hotel', title: '回酒店休息', desc: '早点休息，明天可以睡到自然醒。' }
+    ],
+    transport: '今日全程步行圈 · 无需通勤',
+    hotel: '长沙 · 万代大酒店（五一广场 · 第 2/4 晚）',
+    tip: '昨晚深夜已抵达，今天全天都在酒店步行圈内；IFS 楼顶 KAWS 上午去人最少；国庆首日下午人流渐密，午休正好错峰。'
+  },
+  {
+    day: 3, date: '10.02', weekday: '周五', cityKey: 'changsha', city: '长沙',
     place: '长沙 · 橘子洲', theme: '独立寒秋',
     subtitle: '上午看江，下午躲进美术馆，晚上用胃认识星城',
     image: IMG.juZiZhou, imageAlt: '橘子洲头青年毛泽东雕像',
@@ -106,11 +125,11 @@ export const itinerary = [
       { time: '22:00', tag: 'hotel', title: '江风散步回酒店', desc: '湘江中路吹吹晚风消消食，今天的步数刚好一万步。' }
     ],
     transport: '地铁 2 号线 · 市内通勤约 ¥10/人/天',
-    hotel: '长沙 · 万代大酒店（五一广场 · 第 2/3 晚）',
+    hotel: '长沙 · 万代大酒店（五一广场 · 第 3/4 晚）',
     tip: '橘子洲十一期间限流，务必提前在「橘洲文旅」公众号预约免费门票；小火车旺季排队，不赶时间可步行。'
   },
   {
-    day: 3, date: '10.03', weekday: '周六', cityKey: 'changsha', city: '长沙',
+    day: 4, date: '10.03', weekday: '周六', cityKey: 'changsha', city: '长沙',
     place: '长沙 · 岳麓山', theme: '岳麓寻秋',
     subtitle: '爱晚亭边枫渐红，千年学府半日游，下午照旧午休',
     image: IMG.aiWanTing, imageAlt: '岳麓山爱晚亭秋色',
@@ -126,11 +145,11 @@ export const itinerary = [
       { time: '20:30', tag: 'sight', title: '渔人码头夜景', desc: '湘江西岸看对岸 CBD 灯光，浪漫收尾。' }
     ],
     transport: '地铁 + 公交/打车 · 岳麓山半日通勤约 ¥30/两人',
-    hotel: '长沙 · 万代大酒店（五一广场 · 第 3/3 晚）',
+    hotel: '长沙 · 万代大酒店（五一广场 · 第 4/4 晚）',
     tip: '岳麓山可乘观光车或索道上山（¥30 起），不必全程步行；爱晚亭秋季人多，上午去光线柔和人也少。'
   },
   {
-    day: 4, date: '10.04', weekday: '周日', cityKey: 'changsha', city: '长沙 → 张家界',
+    day: 5, date: '10.04', weekday: '周日', cityKey: 'changsha', city: '长沙 → 张家界',
     place: '长沙 → 张家界', theme: '奔赴峰林',
     subtitle: '上午看两千年前的长沙，下午的高铁开往三千奇峰',
     image: IMG.wuLingYuan, imageAlt: '张家界武陵源峰林',
@@ -149,7 +168,7 @@ export const itinerary = [
     tip: '湖南博物院十一一票难求，放票即约；若约不上可替换为李自健美术馆（免费，需预约）。'
   },
   {
-    day: 5, date: '10.05', weekday: '周一', cityKey: 'zhangjiajie', city: '张家界',
+    day: 6, date: '10.05', weekday: '周一', cityKey: 'zhangjiajie', city: '张家界',
     place: '张家界 · 武陵源', theme: '金鞭溪与阿凡达',
     subtitle: '走进《阿凡达》的哈利路亚世界，步道平缓不赶时间',
     image: IMG.wuLingYuan2, imageAlt: '武陵源袁家界峰林云海',
@@ -168,7 +187,7 @@ export const itinerary = [
     tip: '百龙天梯是全封闭轿厢电梯，不看脚下就当普通电梯坐；实在介意可改走乱窜坡步道上袁家界（约 1.5h），全程林荫覆盖无暴露感，人少景美。'
   },
   {
-    day: 6, date: '10.06', weekday: '周二', cityKey: 'zhangjiajie', city: '张家界 → 长沙',
+    day: 7, date: '10.06', weekday: '周二', cityKey: 'zhangjiajie', city: '张家界 → 长沙',
     place: '张家界 · 天门山', theme: '云端天门',
     subtitle: '不踩玻璃也看得到云海，999 级台阶丈量天门，傍晚高铁回星城',
     image: IMG.tianMenFog, imageAlt: '天门山云雾缭绕的崖壁栈道',
@@ -188,7 +207,7 @@ export const itinerary = [
     tip: '行程已避开玻璃栈道与悬索桥（现场均有旁路可绕行）；索道与扶梯均为封闭舱体，慢慢来就好；山顶风大温低备薄外套，回程高铁建议买 16:30 后班次。'
   },
   {
-    day: 7, date: '10.07', weekday: '周三', cityKey: 'changsha', city: '长沙',
+    day: 8, date: '10.07', weekday: '周三', cityKey: 'changsha', city: '长沙',
     place: '长沙 · 黄花机场', theme: '星城道别',
     subtitle: '睡到自然醒的最后一日，机场出口拥抱后各奔山海',
     image: IMG.changshaAirport, imageAlt: '长沙黄花国际机场航站楼',
@@ -210,10 +229,16 @@ export const itinerary = [
 /* ---------------- 城际交通 ---------------- */
 export const transportList = [
   {
-    from: '深圳', to: '长沙', icon: 'ri-train-line', mode: '高铁直达',
+    from: '深圳', to: '长沙', icon: 'ri-train-line', mode: '高铁直达 · 我',
     duration: '约 3h30m', price: '¥388.5/人 起',
-    note: '深圳北 → 长沙南，建议 08:00-09:00 班次，开售即抢',
+    note: '深圳北 → 长沙南，9.30 晚班次，避开 10.1 上午抢票高峰',
     theme: { bg: 'bg-sky-50', iconBg: 'bg-sky-500', text: 'text-sky-700', border: 'hover:border-sky-300' }
+  },
+  {
+    from: '深圳', to: '长沙', icon: 'ri-flight-takeoff-line', mode: '直飞航班 · 她',
+    duration: '约 1h25m', price: '¥450-700/人',
+    note: '宝安 SZX → 黄花 CSX，9.30 傍晚班次，落地磁浮 20 分钟进城',
+    theme: { bg: 'bg-violet-50', iconBg: 'bg-violet-500', text: 'text-violet-700', border: 'hover:border-violet-300' }
   },
   {
     from: '长沙', to: '张家界', icon: 'ri-train-line', mode: '高铁直达',
@@ -250,7 +275,7 @@ export const transportList = [
 /* ---------------- 精选住宿（每晚 ¥500 上下 · 舒适不奢华） ---------------- */
 export const hotelStays = [
   {
-    city: '长沙', area: '五一广场商圈', nights: 3, dateRange: '10.01 - 10.03',
+    city: '长沙', area: '五一广场商圈', nights: 4, dateRange: '09.30 - 10.03',
     icon: 'ri-city-line', color: 'bg-orange-500', chip: 'bg-orange-50 text-orange-600',
     reason: '全城 C 位：下楼就是茶颜悦色与太平街，地铁 1/2 号线双线交汇，去橘子洲两站直达，逛吃全程零通勤。',
     avgPrice: '¥550-650', avgNote: '十一核心商圈峰值价，全程地段最贵的一站，但位置无可替代',
@@ -348,12 +373,12 @@ export const foods = [
 
 /* ---------------- 预算（两人合计） ---------------- */
 export const budget = {
-  total: 11300,
+  total: 12100,
   note: '十一黄金周为旺季峰值价，两人合计估算，实际以预订为准',
   items: [
-    { name: '城际交通', amount: 3300, icon: 'ri-train-line', color: '#0ea5e9', desc: '高铁 3 段 + 机票 2 趟（双人合计）' },
-    { name: '住宿 6 晚', amount: 3200, icon: 'ri-hotel-bed-line', color: '#8b5cf6', desc: '五一商圈×3晚 + 索道站×2晚 + 南站×1晚' },
-    { name: '餐饮美食', amount: 2100, icon: 'ri-restaurant-2-line', color: '#f97316', desc: '日均 ¥300，含两顿仪式感大餐' },
+    { name: '城际交通', amount: 3500, icon: 'ri-train-line', color: '#0ea5e9', desc: '高铁 3 段 + 航班 3 趟（双人合计）' },
+    { name: '住宿 7 晚', amount: 3700, icon: 'ri-hotel-bed-line', color: '#8b5cf6', desc: '五一商圈×4晚 + 索道站×2晚 + 南站×1晚' },
+    { name: '餐饮美食', amount: 2200, icon: 'ri-restaurant-2-line', color: '#f97316', desc: '日均 ¥275，含两顿仪式感大餐' },
     { name: '门票索道', amount: 1500, icon: 'ri-ticket-2-line', color: '#14b8a6', desc: '武陵源 + 天门山 A 线 + 岳麓书院' },
     { name: '购物机动', amount: 1200, icon: 'ri-shopping-bag-3-line', color: '#f43f5e', desc: '特产手信 + 应急余量' }
   ]
@@ -364,7 +389,7 @@ export const tips = [
   {
     icon: 'ri-calendar-check-line', title: '抢票攻略',
     theme: { bg: 'bg-rose-50', iconBg: 'bg-rose-500', text: 'text-rose-700' },
-    desc: '火车票提前 15 天在 12306 开售（9 月中旬起），开放候补 + 多车次勾选；机票越早订越便宜，十一价格只涨不跌。'
+    desc: '9.30 节前夜出发天然错峰：高铁与机票都比 10.1 当天好买且便宜一截；仍建议 12306 开售即抢（提前 15 天，9 月中旬起）并勾选候补，机票越早订越稳。'
   },
   {
     icon: 'ri-hotel-bed-line', title: '订房节奏',
