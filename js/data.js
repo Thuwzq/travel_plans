@@ -22,8 +22,8 @@ export const IMG = {
 export const tripMeta = {
   badge: '2026 国庆黄金周 · 双人湘行',
   title: '湘约十一',
-  subtitle: '深圳 → 长沙 → 张家界 → 长沙',
-  slogan: '9.30 的夜色里分头出发：她一小时飞抵星城，我三小时半缓缓北上；先醉在星城的烟火里，再赴三千奇峰的阿凡达秘境，最后回到长沙道别——一个奔向大海之北，一个回归湾区之南。',
+  subtitle: '大连 / 深圳 → 长沙 → 张家界 → 长沙',
+  slogan: '9.30 的暮色里分头出发：一程航班自大连穿云南下，一程高铁自深圳呼啸西进；先醉在星城的烟火里，再赴三千奇峰的阿凡达秘境，最后回到长沙道别——一个奔向大海之北，一个回归湾区之南。',
   stats: [
     { value: '8', unit: '天', label: '拉满黄金周' },
     { value: '2', unit: '人', label: '同行旅人' },
@@ -36,8 +36,8 @@ export const tripMeta = {
 /* ---------------- 路线总览 ---------------- */
 export const routeStops = [
   {
-    tag: '启程', city: '深圳', date: '9.30 傍晚', icon: '🛫',
-    desc: '双线出发 · 我高铁她飞机', highlights: ['我 · 深圳北高铁', '她 · 宝安直飞星城'],
+    tag: '启程', city: '大连 / 深圳', date: '9.30 傍晚', icon: '🛫',
+    desc: '双线出发 · 航班与高铁', highlights: ['大连 ✈ 直飞星城', '深圳 🚄 高铁直达'],
     bg: 'bg-sky-100', text: 'text-sky-600', chip: 'bg-sky-50 text-sky-700'
   },
   {
@@ -73,22 +73,22 @@ export const cityTabs = [
 export const itinerary = [
   {
     day: 1, date: '09.30', weekday: '周三', cityKey: 'changsha', city: '长沙',
-    place: '深圳 → 长沙', theme: '星夜启程',
-    subtitle: '同一片夜色里分头出发：她一小时飞抵星城，我三小时半缓缓北上',
+    place: '大连 / 深圳 → 长沙', theme: '星夜启程',
+    subtitle: '同一片暮色里分头出发：一程航班穿云南下，一程高铁呼啸西进',
     image: IMG.changshaNight, imageAlt: '长沙五一商圈璀璨夜景',
     schedule: [
-      { time: '16:30', tag: 'transport', title: '她 · 出发宝安机场', desc: '地铁 11 号线直达宝安机场，提前 1.5 小时值机托运，行李托运后一身轻。' },
-      { time: '18:00', tag: 'transport', title: '她 · 起飞直飞长沙', desc: '深航/南航傍晚班次约 1 小时 25 分抵达黄花机场，约 ¥450-700/人；同一时刻我从深圳北发车，先到的负责办入住。' },
-      { time: '18:05', tag: 'transport', title: '我 · 深圳北高铁发车', desc: 'G 字头高铁约 3 小时 30 分直达长沙南，二等座约 ¥388.5；节前夜出发，票比 10.1 上午好抢得多。' },
-      { time: '19:25', tag: 'transport', title: '她 · 抵达黄花机场', desc: '磁浮快线 20 分钟 + 地铁 2 号线 5 站，约 50 分钟抵达五一广场；不想折腾打车约 40 分钟 ¥60。' },
-      { time: '20:15', tag: 'hotel', title: '她 · 先抵酒店办入住', desc: '万代大酒店前台凭身份证拿房卡，把两人行李安顿好，等我上楼。' },
-      { time: '21:30', tag: 'transport', title: '我 · 抵达长沙南', desc: '地铁 2 号线直达五一广场约 30 分钟，出站步行即达酒店，全程不折腾。' },
-      { time: '22:00', tag: 'food', title: '会合 · 深夜嗦粉', desc: '酒店楼下粉店还亮着灯：一碗热汤粉下肚，四个小时的路途都焐热了，旅程正式开场。' },
+      { time: '15:30', tag: 'transport', title: '大连 · 周水子机场值机', desc: '提前 1.5 小时抵达周水子机场，值机托运一步到位，行李托运后一身轻。' },
+      { time: '16:30', tag: 'transport', title: '大连 · 起飞直飞长沙', desc: '直飞约 3 小时 20 分抵达黄花机场，约 ¥700-1000；几乎同一时刻，深圳北的高铁也正点发车。' },
+      { time: '17:55', tag: 'transport', title: '深圳 · 深圳北高铁发车', desc: 'G 字头高铁约 3 小时 30 分直达长沙南，二等座约 ¥388.5；节前夜出发，票比 10.1 上午好抢得多。' },
+      { time: '19:50', tag: 'transport', title: '长沙 · 航班落地黄花', desc: '磁浮快线 20 分钟 + 地铁 2 号线 5 站，约 50 分钟抵达五一广场；不想折腾打车约 40 分钟 ¥60。' },
+      { time: '20:40', tag: 'hotel', title: '长沙 · 先抵酒店办入住', desc: '万代大酒店前台凭身份证拿房卡，安顿好行李，静待另一路抵达。' },
+      { time: '21:25', tag: 'transport', title: '长沙 · 高铁抵达长沙南', desc: '地铁 2 号线直达五一广场约 30 分钟，出站步行即达酒店，全程不折腾。' },
+      { time: '22:15', tag: 'food', title: '会合 · 深夜嗦粉', desc: '酒店楼下粉店还亮着灯：一碗热汤粉下肚，三四个小时的路途都焐热了，旅程正式开场。' },
       { time: '23:00', tag: 'hotel', title: '早点休息', desc: '明天是国庆第一天，睡到自然醒再出发。' }
     ],
-    transport: '我 · 深圳北 → 长沙南高铁约 3h30m ¥388.5 · 她 · 宝安 → 黄花直飞约 1h25m ¥450-700',
+    transport: '大连 → 长沙 直飞约 3h20m ¥700-1000 · 深圳北 → 长沙南 高铁约 3h30m ¥388.5',
     hotel: '长沙 · 万代大酒店（五一广场 · 第 1/4 晚）',
-    tip: '节前夜错峰出行：9.30 的高铁与机票都比 10.1 当天从容且便宜；出发前在 App 上办好线上入住登记，深夜到店直接拿房卡不排队。'
+    tip: '节前夜错峰出行：9.30 的班次比 10.1 当天从容且便宜，大连直飞与深圳高铁都避开了抢票最高峰；出发前在 App 上办好线上入住登记，深夜到店直接拿房卡不排队。'
   },
   {
     day: 2, date: '10.01', weekday: '周四', cityKey: 'changsha', city: '长沙',
@@ -222,22 +222,22 @@ export const itinerary = [
     ],
     transport: '磁浮快线约 20min ¥20/人 · 长沙 → 大连 ¥900-1300 /人 · 长沙 → 深圳 ¥500-800 /人',
     hotel: '各自归家 · 后会有期',
-    tip: '两趟航班时间不同，先送早出发的那位；分别前记得拥抱合影——看过的山水都会记得，我们曾并肩同行。'
+    tip: '两趟航班时间不同，先送早出发的一程；分别前记得拥抱合影——看过的山水都会记得，我们曾并肩同行。'
   }
 ];
 
 /* ---------------- 城际交通 ---------------- */
 export const transportList = [
   {
-    from: '深圳', to: '长沙', icon: 'ri-train-line', mode: '高铁直达 · 我',
+    from: '深圳', to: '长沙', icon: 'ri-train-line', mode: '高铁直达',
     duration: '约 3h30m', price: '¥388.5/人 起',
     note: '深圳北 → 长沙南，9.30 晚班次，避开 10.1 上午抢票高峰',
     theme: { bg: 'bg-sky-50', iconBg: 'bg-sky-500', text: 'text-sky-700', border: 'hover:border-sky-300' }
   },
   {
-    from: '深圳', to: '长沙', icon: 'ri-flight-takeoff-line', mode: '直飞航班 · 她',
-    duration: '约 1h25m', price: '¥450-700/人',
-    note: '宝安 SZX → 黄花 CSX，9.30 傍晚班次，落地磁浮 20 分钟进城',
+    from: '大连', to: '长沙', icon: 'ri-flight-takeoff-line', mode: '直飞航班',
+    duration: '约 3h20m', price: '¥700-1000/人',
+    note: '周水子 DLC → 黄花 CSX，9.30 下午班次，落地磁浮 20 分钟进城',
     theme: { bg: 'bg-violet-50', iconBg: 'bg-violet-500', text: 'text-violet-700', border: 'hover:border-violet-300' }
   },
   {
@@ -373,10 +373,10 @@ export const foods = [
 
 /* ---------------- 预算（两人合计） ---------------- */
 export const budget = {
-  total: 12100,
+  total: 12300,
   note: '十一黄金周为旺季峰值价，两人合计估算，实际以预订为准',
   items: [
-    { name: '城际交通', amount: 3500, icon: 'ri-train-line', color: '#0ea5e9', desc: '高铁 3 段 + 航班 3 趟（双人合计）' },
+    { name: '城际交通', amount: 3700, icon: 'ri-train-line', color: '#0ea5e9', desc: '高铁 3 段 + 航班 3 趟（双方合计）' },
     { name: '住宿 7 晚', amount: 3700, icon: 'ri-hotel-bed-line', color: '#8b5cf6', desc: '五一商圈×4晚 + 索道站×2晚 + 南站×1晚' },
     { name: '餐饮美食', amount: 2200, icon: 'ri-restaurant-2-line', color: '#f97316', desc: '日均 ¥275，含两顿仪式感大餐' },
     { name: '门票索道', amount: 1500, icon: 'ri-ticket-2-line', color: '#14b8a6', desc: '武陵源 + 天门山 A 线 + 岳麓书院' },
